@@ -1,16 +1,40 @@
 {
   "navPills": [
-    { "tabName": "tabTopClothes", "showName": "Áo", "type": "topclothes" },
-    { "tabName": "tabBotClothes", "showName": "Quần", "type": "botclothes" },
-    { "tabName": "tabShoes", "showName": "Giày dép", "type": "shoes" },
-    { "tabName": "tabHandBags", "showName": "Túi xách", "type": "handbags" },
+    {
+      "tabName": "tabTopClothes",
+      "showName": "Áo",
+      "type": "topclothes"
+    },
+    {
+      "tabName": "tabBotClothes",
+      "showName": "Quần",
+      "type": "botclothes"
+    },
+    {
+      "tabName": "tabShoes",
+      "showName": "Giày dép",
+      "type": "shoes"
+    },
+    {
+      "tabName": "tabHandBags",
+      "showName": "Túi xách",
+      "type": "handbags"
+    },
     {
       "tabName": "tabNecklaces",
       "showName": "Dây chuyền",
       "type": "necklaces"
     },
-    { "tabName": "tabHairStyle", "showName": "Kiểu tóc", "type": "hairstyle" },
-    { "tabName": "tabBackground", "showName": "Nền", "type": "background" }
+    {
+      "tabName": "tabHairStyle",
+      "showName": "Kiểu tóc",
+      "type": "hairstyle"
+    },
+    {
+      "tabName": "tabBackground",
+      "showName": "Nền",
+      "type": "background"
+    }
   ],
   "tabPanes": [
     {
@@ -219,7 +243,7 @@
       "name": "Background 1",
       "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, nulla.",
       "imgSrc_jpg": "../assets/images/background/background1_show.jpg",
-      "imgSrc_png": "../assets/images/background/background1.jpg"
+      "imgSrc_png": "../assets/images/background/background1.png"
     },
     {
       "id": "background_2",
@@ -227,7 +251,7 @@
       "name": "Background 2",
       "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, nulla.",
       "imgSrc_jpg": "../assets/images/background/background2_show.jpg",
-      "imgSrc_png": "../assets/images/background/background2.jpg"
+      "imgSrc_png": "../assets/images/background/background2.png"
     },
     {
       "id": "background_3",
@@ -235,7 +259,7 @@
       "name": "Background 3",
       "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, nulla.",
       "imgSrc_jpg": "../assets/images/background/background3_show.jpg",
-      "imgSrc_png": "../assets/images/background/background3.jpg"
+      "imgSrc_png": "../assets/images/background/background3.png"
     },
     {
       "id": "background_4",
@@ -243,7 +267,7 @@
       "name": "Background 4",
       "desc": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, nulla.",
       "imgSrc_jpg": "../assets/images/background/background4_show.jpg",
-      "imgSrc_png": "../assets/images/background/background4.jpg"
+      "imgSrc_png": "../assets/images/background/background4.png."
     }
   ]
 }

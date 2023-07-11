@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
   <link rel="stylesheet" href="./../assets/css/style.css" />
 </head>
@@ -25,8 +25,7 @@
 
           <div class="card-body">
             <h4 class="card-title text-center">
-              CyberLearn - Học lập trình trực tuyến - Dự án thử đồ trực tuyến
-              - Virtual Dressing Room
+              CyberLearn - Học lập trình trực tuyến - Dự án thử đồ trực tuyến - Virtual Dressing Room
             </h4>
           </div>
         </div>
@@ -35,52 +34,12 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#ao">Áo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#quan">Quần</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#kieutoc">Kiểu Tóc</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#tuixach">Túi Xách</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#giaydep">Giày Dép</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#daychuyen">Dây Chuyền</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#nen">Nền</a>
-          </li>
+        <ul class="nav nav-pills mb-3" id="nav-pills-menu" role="tablist">
+          <!-- Nav Links will be dynamically generated -->
         </ul>
-        <!-- Content for each pill -->
-        <div class="tab-content">
-          <div id="ao" class="tab-pane fade show active">
-            <div class="items-zone" id="ao-items-zone"></div>
-          </div>
-          <div id="quan" class="tab-pane fade">
-            <div class="items-zone" id="quan-items-zone"></div>
-          </div>
-          <div id="kieutoc" class="tab-pane fade">
-            <div class="items-zone" id="kieutoc-items-zone"></div>
-          </div>
-          <div id="tuixach" class="tab-pane fade">
-            <div class="items-zone" id="tuixach-items-zone"></div>
-          </div>
-          <div id="giaydep" class="tab-pane fade">
-            <div class="items-zone" id="giaydep-items-zone"></div>
-          </div>
-          <div id="daychuyen" class="tab-pane fade">
-            <div class="items-zone" id="daychuyen-items-zone"></div>
-          </div>
-          <div id="nen" class="tab-pane fade">
-            <div class="items-zone" id="nen-items-zone"></div>
-          </div>
+
+        <div class="tab-content" id="pills-tabContent">
+          <!-- Tab Panes will be dynamically generated -->
         </div>
       </div>
       <div class="col-md-4">
@@ -93,11 +52,11 @@
           </div>
           <!-- Quần -->
           <div class="bikinibottom">
-            <img id ="quan-img" src="" alt="">
+            <img id="quan-img" src="" alt="">
           </div>
           <!-- kiểu tóc -->
           <div class="hairstyle">
-            <img id ="kieutoc-img" src="">
+            <img id="kieutoc-img" src="">
           </div>
           <!-- dây chuyền -->
           <div class="necklace">
@@ -119,19 +78,16 @@
       </div>
     </div>
   </div>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="./../models/itemData.js"></script>
-  <script src="./../views/itemView.js"></script>
-  <script src="./../controllers/itemController.js"></script>
-  </script>
 </body>
-
-</html>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./../data/Data.json"></script>
+<script src="./../models/models.js"></script>
+<script src="./../views/itemView.js"></script>
+<script src="./../controllers/itemController.js"></script>
