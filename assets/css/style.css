@@ -136,7 +136,7 @@
 .background {
   width: 900px;
   height: 1500px;
-  background-image: url(./../images/background/background0.jpg);
+  background-image: url(./../images/background/background0.png);
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
@@ -192,18 +192,18 @@ hr {
   flex-direction: column;
 }
 
-.product-image {
+.item img {
   width: 50%;
   height: 50%;
 }
 
-.product-title {
+.item h4 {
   margin-top: 10px;
   font-size: 16px;
   text-align: center;
 }
 
-.thudo {
+.item button {
   display: block;
   margin-top: 10px;
   width: 100%;

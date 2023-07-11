@@ -1,50 +1,51 @@
-const itemZone = (items, zoneID, targetID) => {
-    const itemsContainer = document.getElementById(zoneID);
-    items.forEach((itemSrc) => {
-      const itemDiv = document.createElement('div');
-      itemDiv.classList.add('item');
-  
+const Dressing = (item, BsPill, imgID) => {
+    const BSPillContainer = document.getElementById(BsPill);
+    item.forEach((itemSrc) => {
+      //tạo HTML ô chứa sản phẩm
+      const itemContainer = document.createElement('div');
       const image = document.createElement('img');
-      image.src = itemSrc;
-      image.alt = 'Product Image';
-      image.classList.add('product-image');
-  
       const title = document.createElement('h4');
-      title.classList.add('product-title');
-      const imageName = itemSrc.split('/').pop();
-      const titleText = imageName.split('.')[0];
-      title.textContent = formatTitle(titleText);
-  
       const button = document.createElement('button');
-      button.classList.add('thudo-button');
+      BSPillContainer.appendChild(itemContainer);
+      itemContainer.classList.add('item');
       button.textContent = 'Thử đồ';
-  
+      itemContainer.appendChild(image);
+      itemContainer.appendChild(title);
+      itemContainer.appendChild(button);
+      //lấy tên hình ảnh dựa trên đường link
+      image.src = itemSrc;
+      const imageName = itemSrc.split('/').pop();
+      //tạo đường dẫn chứa ảnh mặc đồ khi bấm nút thử đồ
       button.addEventListener('click', () => {
-        const targetImage = document.getElementById(targetID);
+        const imageID = document.getElementById(imgID);
         const imgSrc = itemSrc.replace('_show.jpg', '.png');
-        targetImage.src = imgSrc;
+        imageID.src = imgSrc;
       });
-  
-      itemDiv.appendChild(image);
-      itemDiv.appendChild(title);
-      itemDiv.appendChild(button);
-      itemsContainer.appendChild(itemDiv);
+      //tạo tiêu đề sản phẩm dựa trên tên hình ảnh
+      let titleText = imageName.split('.')[0];
+      if (titleText.endsWith('_show')) {
+        titleText = titleText.slice(0, -5);
+      }
+      title.textContent = formatTitle(titleText);
     });
   };
   
+  // format tiêu đề sản phẩm
   const formatTitle = (titleText) => {
+    if (titleText.endsWith('_show')) {
+        titleText = titleText.slice(0, -5);
+    }
     return titleText
-      .split(' ')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+        .split(' ')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
   };
   
-  // Usage
-  itemZone(itemData.ao, 'ao-items-zone', 'ao-img');
-  itemZone(itemData.quan, 'quan-items-zone', 'quan-img');
-  itemZone(itemData.kieutoc, 'kieutoc-items-zone', 'kieutoc-img');
-  itemZone(itemData.tuixach, 'tuixach-items-zone', 'handbag');
-  itemZone(itemData.giaydep, 'giaydep-items-zone', 'giaydep-img');
-  itemZone(itemData.daychuyen, 'daychuyen-items-zone', 'daychuyen-img');
-  itemZone(itemData.nen, 'nen-items-zone', 'nen-img');
-  
+  //bóc ra xài
+  Dressing(itemData.ao, 'ao-items-zone', 'ao-img');
+  Dressing(itemData.quan, 'quan-items-zone', 'quan-img');
+  Dressing(itemData.kieutoc, 'kieutoc-items-zone', 'kieutoc-img');
+  Dressing(itemData.tuixach, 'tuixach-items-zone', 'handbag');
+  Dressing(itemData.giaydep, 'giaydep-items-zone', 'giaydep-img');
+  Dressing(itemData.daychuyen, 'daychuyen-items-zone', 'daychuyen-img');
+  Dressing(itemData.nen, 'nen-items-zone', 'nen-img');
