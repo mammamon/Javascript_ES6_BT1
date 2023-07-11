@@ -1,17 +1,14 @@
-// NavPill class
 class NavPill {
-  constructor(showName, type) {
-    this.showName = showName;
-    this.type = type;
+  constructor(_showName, _type) {
+    this.showName = _showName;
+    this.type = _type;
   }
 }
-
-// Product class
 class Product {
-  constructor(type, name, imgShow, imgDress) {
-    this.type = type;
-    this.name = name;
-    this.imgShow = imgShow;
-    this.imgDress = imgDress;
+  constructor(_type, _name, _imgShow, _imgDress) {
+    this.type = _type;
+    this.name = _name;
+    this.imgShow = _imgShow;
+    this.imgDress = _imgDress;
   }
 }
