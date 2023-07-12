@@ -15,13 +15,13 @@ function renderNavLinks(navPills) {
 };
 
 
-//tạo HTML cho tab-pane 
+//tạo HTML cho item
 function renderItems(products) {
   const tabContent = document.getElementById('pills-tabContent');
   products.forEach(product => {
+    //tạo HTML cho tab-pane trigger bootstrap nav-pill
     const tabPane = document.createElement('div');
     const itemsZone = document.createElement('div');
-    //thêm thuộc tính bootstrap để trigger nav-pill
     tabPane.classList.add('tab-pane');
     tabPane.classList.add('fade');
     itemsZone.classList.add('items-zone');
@@ -78,6 +78,8 @@ axios
     renderItems(products);
   })
 
+
+//lột đồ
 document.querySelector('.dress-reset').addEventListener('click', () => {
   const dressImages = document.querySelectorAll('.dress img');
   dressImages.forEach((img) => {
