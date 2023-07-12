@@ -78,7 +78,7 @@
   position: absolute;
   top: -240px;
   left: -123px;
-  scale: .48;
+  scale: .49;
   z-index: 19;
 }
 
@@ -158,7 +158,7 @@ hr {
 }
 
 .nav-pills .nav-item {
-  width: 140px;
+  width: 125px;
   text-align: center;
   font-weight: 500;
 }
@@ -230,6 +230,6 @@ hr {
 }
 .dress-reset {
   position: absolute;
-  top: 110vh;
+  top: 120vh;
   right: 25vw;
 }
