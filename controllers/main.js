@@ -1,67 +1,54 @@
 //tạo HTML cho nav-link
 function renderNavLinks(navPills) {
-  const navMenu = document.getElementById('nav-pills-menu');
-  //thiết lập HTML cho mỗi nav-link
+  let content = "";
   navPills.forEach((navPill, index) => {
-    const listItem = document.createElement('li');
-    const navLink = document.createElement('a');
-    navLink.textContent = navPill.showName;
-    listItem.classList.add('nav-item');
-    navLink.classList.add('nav-link');
-    listItem.appendChild(navLink);
-    navMenu.appendChild(listItem);
-    //tạo thuộc tính bootstrap để trigger nav-pill
-    navLink.setAttribute('id', `nav-${navPill.type}-tab`);
-    navLink.setAttribute('href', `#${navPill.type}`);
-    navLink.setAttribute('data-toggle', 'pill');
-    navLink.setAttribute('role', 'tab');
-    navLink.setAttribute('aria-controls', navPill.type);
-    navLink.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+    content += `
+      <li class="nav-item">
+        <a class="nav-link ${index === 0 ? 'active' : ''}" id="nav-${navPill.type}-tab" data-toggle="pill" href="#${navPill.type}" role="tab" aria-controls="${navPill.type}" aria-selected="${index === 0 ? 'true' : 'false'}">
+          ${navPill.showName}
+        </a>
+      </li>
+    `;
   });
-}
+  const navMenu = document.getElementById('nav-pills-menu');
+  navMenu.innerHTML = content;
+};
 
-//tạo HTML cho tab-pane / item
+
+//tạo HTML cho tab-pane 
 function renderItems(products) {
   const tabContent = document.getElementById('pills-tabContent');
   products.forEach(product => {
     const tabPane = document.createElement('div');
     const itemsZone = document.createElement('div');
-    //tạo thuộc tính bootstrap để trigger nav-pill
+    //thêm thuộc tính bootstrap để trigger nav-pill
     tabPane.classList.add('tab-pane');
     tabPane.classList.add('fade');
     itemsZone.classList.add('items-zone');
     tabPane.setAttribute('id', product.type);
     tabPane.setAttribute('role', 'tabpanel');
-    //thiết lập HTML / button event cho mỗi item
-    product.items.forEach(item => {
-      const itemContainer = document.createElement('div');
-      itemContainer.classList.add('item');
-      const img = document.createElement('img');
-      img.src = item.imgSrc_jpg;
-      const title = document.createElement('h4');
-      title.textContent = item.name;
-      //tạo nút thử đồ và đặt sự kiện
-      const button = document.createElement('button');
-      button.textContent = 'Thử Đồ';
-      button.addEventListener('click', () => {
-        //DOM tới các ảnh cần thay đổi source (ID ảnh cẩn thay đổi = {type} + "-img")
-        const imgDressing = document.getElementById(`${product.type}-img`);
-        if (imgDressing) {
-          imgDressing.src = item.imgSrc_png;
-        }
-      });
-      //gắn HTML vào item
-      itemContainer.appendChild(img);
-      itemContainer.appendChild(title);
-      itemContainer.appendChild(button);
-      itemsZone.appendChild(itemContainer);
-    });
+    //tạo HTML cho item
+    const itemsHtml = product.items.map(item => `
+      <div class="item">
+        <img src="${item.imgSrc_jpg}">
+        <h4>${item.name}</h4>
+        <button onclick="dressingImg('${product.type}', '${item.imgSrc_png}')">Thử Đồ</button>
+      </div>
+    `).join('');
+    itemsZone.innerHTML = itemsHtml;
     //gắn HTML vào tab-pane/items-zone
     tabPane.appendChild(itemsZone);
     tabContent.appendChild(tabPane);
   });
 }
 
+//hiện ảnh mặc đồ
+function dressingImg(type, imgSrc) {
+  const imgDressing = document.getElementById(`${type}-img`);
+  if (imgDressing) {
+    imgDressing.src = imgSrc;
+  }
+}
 //lấy dữ liệu từ Data.json
 axios
   .get('../data/Data.json')
