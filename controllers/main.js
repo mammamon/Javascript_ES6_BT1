@@ -42,13 +42,12 @@ function renderItems(products) {
       title.textContent = item.name;
       //tạo nút thử đồ và đặt sự kiện
       const button = document.createElement('button');
-      button.classList.add('thudo');
       button.textContent = 'Thử Đồ';
       button.addEventListener('click', () => {
         //DOM tới các ảnh cần thay đổi source (ID ảnh cẩn thay đổi = {type} + "-img")
-        const imgElement = document.getElementById(`${product.type}-img`);
-        if (imgElement) {
-          imgElement.src = item.imgSrc_png;
+        const imgDressing = document.getElementById(`${product.type}-img`);
+        if (imgDressing) {
+          imgDressing.src = item.imgSrc_png;
         }
       });
       //gắn HTML vào item
@@ -91,7 +90,16 @@ axios
     //render ra tất cả product (html: tab-pane/items-zone/item)
     renderItems(products);
   })
-  .catch(error => {
-    console.error(error);
-  });
 
+document.querySelector('.dress-reset').addEventListener('click', () => {
+  const dressImages = document.querySelectorAll('.dress img');
+  dressImages.forEach((img) => {
+    if (img.id !== 'background-img') {
+      img.src = '';
+    }
+  });
+  const bikiniTop = document.querySelector('.bikinitop');
+  bikiniTop.style.backgroundImage = 'none';
+  const bikiniBottom = document.querySelector('.bikinibottom');
+  bikiniBottom.style.backgroundImage = 'none';
+});
